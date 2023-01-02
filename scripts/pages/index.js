@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     main();
 
     // Création d'une fonction pour récupérer les données de l'API
-    async function getPhotographers() {
+    function getPhotographers() {
         return fetch('http://localhost:5500/data/photographers.json')
             .then(function (response) {
                 return response.json();
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Création d'une fonction pour intégrer/afficher au HTML les données provenant de l'API
-    async function displayData(photographers) {
+    function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
 
         photographers.forEach((photographer) => {

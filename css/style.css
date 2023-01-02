@@ -77,3 +77,24 @@ article .price {
     border-radius: 50%;
     object-fit: cover;
 }
+
+.mediaCard {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mediaCard article {
+    min-width: 33%;
+}
+
+.mediaCard img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.descriptionPicture {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+}

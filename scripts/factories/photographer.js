@@ -8,18 +8,38 @@ function photographerFactory(data) {
         article.insertAdjacentHTML(
             "beforeend",
             `
-                <a href="./photographer.html?id=${data.id}">
+                <a href="./photographer.html?id=${id}">
                     <img src="${picture}" alt="">
-                    <h2>${data.name}</h2>
+                    <h2>${name}</h2>
                 </a>        
-                <h3>${data.city}, ${data.country}</h3>
-                <p class="tagline">${data.tagline}</p>
-                <p class="price">${data.price}€/jour</p>
+                <h3>${city}, ${country}</h3>
+                <p class="tagline">${tagline}</p>
+                <p class="price">${price}€/jour</p>
             `
         );
 
         return (article);
     }
 
-    return { name, picture, getUserCardDOM }
+    function getUser() {
+        const photographerCard = document.createElement('section');
+
+        photographerCard.classList.add("photographerCard")
+        photographerCard.insertAdjacentHTML(
+            "beforeend",
+            `
+                <div class = "informations">
+                    <h1>${name}</h1>
+                    <h3>${city}, ${country}</h3>
+                    <p class="tagline">${tagline}</p>
+                </div>  
+                <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+                <img src="${picture}" alt="" class="userPicture">
+            `
+        )
+
+        return (photographerCard)
+    }
+
+    return { name, picture, getUserCardDOM, getUser }
 }

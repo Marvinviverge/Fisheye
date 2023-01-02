@@ -74,3 +74,16 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+.userPicture {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.photographerCard {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
