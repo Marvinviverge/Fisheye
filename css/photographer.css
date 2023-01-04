@@ -21,7 +21,22 @@
     cursor: pointer;
 }
 
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .modal {
+    position: relative;
+    z-index: 3;
     border-radius: 5px;
     background-color: #DB8876;
     width: 50%;
@@ -86,4 +101,24 @@ form input {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.dayPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    z-index: 2;
+    background-color: #DB8876;
+    bottom: 0px;
+    right: 35px;
+    border-radius: 5px;
+    width: 376px;
+    height: 89px;
+}
+
+.dayPrice p {
+    font-size: 24px;
+    font-weight: 500;
 }

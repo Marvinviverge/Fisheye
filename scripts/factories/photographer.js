@@ -35,6 +35,10 @@ function photographerFactory(data) {
                 </div>  
                 <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
                 <img src="${picture}" alt="" class="userPicture">
+                <div class="dayPrice">
+                <p>X likes</p>
+                <p>${price}€/jour</p>
+                </div>
             `
         )
 

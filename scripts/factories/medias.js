@@ -1,4 +1,4 @@
-function mediasFactory(data, name) {
+function mediasFactory(data) {
     const { date, id, image, video, likes, photographerId, price, title } = data;
 
     let picture = `assets/medias/${image}`
