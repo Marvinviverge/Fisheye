@@ -15,7 +15,7 @@ header {
 }
 
 h1 {
-    color: #901C1C;
+    color: #D3573C;
     margin-right: 100px;
 }
 
@@ -91,10 +91,107 @@ article .price {
     width: 350px;
     height: 300px;
     object-fit: cover;
+    cursor: pointer;
+}
+
+.mediaModal {
+    height: 100%;
+    display: none;
+}
+
+.mediaModal.active {
+    display: block;
+}
+
+.mediaModal p {
+    margin: 0;
+    color: #901C1C;
 }
 
 .descriptionPicture {
     display: flex;
     justify-content: space-between;
     width: 350px;
+    color: #901C1C;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.video {
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.heart {
+    cursor: pointer;
+}
+
+.heart,
+.heart2 {
+    width: 19px !important;
+    height: 19px !important;
+}
+
+
+/*Création des boutons previous, next et close de la modal*/
+.modal-content {
+    display: flex;
+    background-color: white;
+    padding: 25px 40px 40px 40px;
+}
+
+.previous-button {
+    background: url('/assets/icons/prev.png') center no-repeat;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+    background-size: 20px;
+
+}
+
+#left-side {
+    display: flex;
+    height: 50%;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+#right-side {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button {
+    background: url('/assets/icons/closemodal.png') center no-repeat;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+    background-size: 20px;
+
+}
+
+.next-button {
+    background: url('/assets/icons/next.png') center no-repeat;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+    background-size: 20px;
+
+}
+
+.next-button img {
+    width: 30px;
+    height: 30px;
 }

@@ -2,13 +2,26 @@
     display: none;
 }
 
+#medias_modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(187, 187, 187, 0.47);
+
+}
+
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
 }
 
-.contact_button {
+.contact_button,
+.send_button,
+#filter {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -21,17 +34,10 @@
     cursor: pointer;
 }
 
-.contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
+.contact_button:hover,
+.contact_button:focus {
+    background-color: #DB8876;
+    color: black;
 }
 
 .modal {
@@ -101,6 +107,26 @@ form input {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    height: 100%;
+}
+
+.photographerCard h1 {
+    font-size: 64px;
+    font-weight: 400;
+    margin: inherit;
+}
+
+.photographerCard h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: inherit;
+    margin-bottom: 10px;
+}
+
+.photographerCard p {
+    font-size: 18px;
+    font-weight: 400;
+    margin: inherit;
 }
 
 .dayPrice {
@@ -115,10 +141,67 @@ form input {
     right: 35px;
     border-radius: 5px;
     width: 376px;
-    height: 89px;
+    height: 79px;
 }
 
 .dayPrice p {
     font-size: 24px;
     font-weight: 500;
+}
+
+.options {
+    border-bottom: 1px solid white;
+}
+
+.modal_childrens {
+    width: 50%;
+    height: 75%;
+    position: relative;
+    top: 10%;
+    margin: auto;
+
+}
+
+.modal-content,
+#carousel {
+    width: 100%;
+    height: 100%;
+    margin: 0px 20px;
+}
+
+#carousel img,
+#carousel video {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+#filter_section {
+    margin: 10px 0 20px 0;
+}
+
+#filter {
+    margin-left: 15px;
+    width: 275px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+}
+
+select {
+    appearance: none;
+}
+
+#filter_section label:after {
+    content: "<";
+    color: white;
+    transform: rotate(90deg);
+    font-size: 25px;
+    right: 12px;
+    top: -5px;
+    position: absolute;
+    pointer-events: none;
 }

@@ -36,7 +36,7 @@ function photographerFactory(data) {
                 <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
                 <img src="${picture}" alt="" class="userPicture">
                 <div class="dayPrice">
-                <p>X likes</p>
+                <div class="likes"><p id="totalLikes">X</p><img class="heart2" src="assets/icons/Heart2.png"/></div>
                 <p>${price}€/jour</p>
                 </div>
             `
@@ -45,5 +45,17 @@ function photographerFactory(data) {
         return (photographerCard)
     }
 
-    return { name, picture, getUserCardDOM, getUser }
+    function calculateTotalLikes() {
+
+        let totalLikes = 0;
+        let allLikes = document.getElementsByClassName('likes');
+
+        for (let i = 1; i < allLikes.length; i++) {
+            totalLikes += parseInt(allLikes[i].textContent);
+        }
+
+        return totalLikes;
+    }
+
+    return { name, picture, getUserCardDOM, getUser, calculateTotalLikes }
 }
