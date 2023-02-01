@@ -12,8 +12,8 @@ class Medias {
             "beforeend",
             `
                 <div class ="descriptionPicture">
-                    <p>${this.title}</p>
-                    <div class="likes"><p>${this.likes}</p><img class="heart" src="assets/icons/Heart.png"/></div>
+                    <p tabindex="0">${this.title}</p>
+                    <div class="likes"><p tabindex="0">${this.likes}</p><img tabindex="0" class="heart" src="assets/icons/Heart.png" alt="icône coeur permettant de liker un média"/></div>
                 </div>  
             `
         )
@@ -21,6 +21,7 @@ class Medias {
         let likeHeart = article.getElementsByClassName('heart')[0]
         likeHeart.addEventListener('click', function incLike(e) {
 
+            likeHeart.classList.add('heartliked');
             let likeValue = parseInt(e.target.parentElement.textContent)
             let intValue = e.target.parentElement.querySelector('p')
             let totalLikes = document.getElementById("totalLikes")
@@ -29,6 +30,11 @@ class Medias {
             totalLikes.innerHTML = parseInt(totalLikes.textContent) + 1;
 
             likeHeart.removeEventListener('click', incLike)
+        })
+        likeHeart.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                likeHeart.click();
+            }
         })
 
         return (article);
@@ -46,13 +52,18 @@ class ImageMedia extends Medias {
         article.insertAdjacentHTML(
             "afterbegin",
             `
-                <img src="${this.image}" class="mediaPicture" alt=""/>
+                <img src="${this.image}" class="mediaPicture" alt="${this.title}" tabindex="0"/>
             `
         )
 
         let imageModal = article.querySelectorAll('.mediaPicture')
         imageModal.forEach(element => {
             element.addEventListener('click', () => openMediasModal(this.id))
+            element.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    openMediasModal(this.id)
+                }
+            })
         })
 
         return (article);
@@ -85,14 +96,21 @@ class VideoMedia extends Medias {
         article.insertAdjacentHTML(
             "afterbegin",
             `
-            <video width="350" height="300" class="video">
+            <video width="350" height="300" alt="${this.title}" class="video" tabindex="0">
             <source src="${this.video}" type=video/mp4>
             </video>
             `
         )
 
-        let imageModal = article.getElementsByClassName('video')[0]
-        imageModal.addEventListener('click', () => openMediasModal(this.id))
+        let imageModal = article.querySelectorAll('.video')
+        imageModal.forEach(element => {
+            element.addEventListener('click', () => openMediasModal(this.id))
+            element.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    openMediasModal(this.id)
+                }
+            })
+        })
 
         return (article);
     }

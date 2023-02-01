@@ -8,13 +8,13 @@ function photographerFactory(data) {
         article.insertAdjacentHTML(
             "beforeend",
             `
-                <a href="./photographer.html?id=${id}">
-                    <img src="${picture}" alt="">
+                <a href="./photographer.html?id=${id}" tabindex="0">
+                    <img src="${picture}" alt="Photo de profil de ${name}">
                     <h2>${name}</h2>
                 </a>        
                 <h3>${city}, ${country}</h3>
                 <p class="tagline">${tagline}</p>
-                <p class="price">${price}€/jour</p>
+                <p class="price" aria-label="Le coût de prestation de ${name} est de ${price}€ par jour.">${price}€/jour</p>
             `
         );
 
@@ -28,16 +28,16 @@ function photographerFactory(data) {
         photographerCard.insertAdjacentHTML(
             "beforeend",
             `
-                <div class = "informations">
-                    <h1>${name}</h1>
-                    <h3>${city}, ${country}</h3>
-                    <p class="tagline">${tagline}</p>
+                <div class="informations">
+                    <h1 tabindex="0">${name}</h1>
+                    <h2 tabindex="0">${city}, ${country}</h2>
+                    <p class="tagline" tabindex="0">${tagline}</p>
                 </div>  
                 <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-                <img src="${picture}" alt="" class="userPicture">
+                <img src="${picture}" alt="${name}" class="userPicture" tabindex="0">
                 <div class="dayPrice">
-                <div class="likes"><p id="totalLikes">X</p><img class="heart2" src="assets/icons/Heart2.png"/></div>
-                <p>${price}€/jour</p>
+                <div class="likes"><p tabindex="0" id="totalLikes">X</p><img class="heart2" src="assets/icons/Heart2.png" alt="icône coeur symbolisant le total de like du photographe" tabindex="0"/></div>
+                <p tabindex="0">${price}€/jour</p>
                 </div>
             `
         )

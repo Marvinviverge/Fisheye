@@ -67,6 +67,16 @@ function initMediasModal(medias) {
         }
     });
 
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+            previousButton.click();
+        } else if (e.key === "ArrowRight") {
+            nextButton.click();
+        } else if (e.key === "Escape") {
+            closeButton.click();
+        }
+    });
+
     return modal;
 }
 

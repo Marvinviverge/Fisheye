@@ -37,48 +37,52 @@ document.addEventListener("DOMContentLoaded", function () {
         const filter = document.createElement("div");
         filter.setAttribute("id", "filter_section")
         photographerSection.appendChild(filter);
-        const dropdown = document.createElement("label");
-        filter.appendChild(dropdown);
-        dropdown.setAttribute("for", "filter")
-        dropdown.innerHTML = "Trier par";
-        dropdown.insertAdjacentHTML(
+        filter.insertAdjacentHTML(
             "beforeend",
             `
-            <select name="filter" id="filter">
-            <option value="" class="options" style="display: none">Veuillez selectionner</option>
-            <option value="likes" class="options">Popularité</option>
-            <option value="date" class="options">Date</option>
-            <option value="title" class="options">Titre</option>
-            </div>    
-            `
+            <label class="label" for="select">Trier par</label>
+            <div class="select__container">
+                <div id="select__container-icon">
+                    <img src="/assets/icons/dropdown.png" alt="icône flèche permettant de déplier le filtre dropdown" tabindex="0"/>
+                </div>
+                <button id="filter" type="button" role="listbox" aria-expended="false" aria-level="button to open select menu" tabindex="0">Veuillez selectionner</button>
+                <div id="dropdown__menu">
+                <ul id="dropdown__menu_hidden">
+                    <li class="dropdown__options" tabindex="0">Popularité</li>
+                    <li class="dropdown__options" tabindex="0">Date</li>
+                    <li class="dropdown__options" tabindex="0">Titre</li>
+                </ul>
+                </div>
+            </div>
+        `
         )
 
-        const select = document.getElementById('filter');
+        const activateDropdown = document.querySelector('.select__container');
+        activateDropdown.addEventListener('click', (e) => {
+            const arrow = document.getElementById('select__container-icon');
+            arrow.classList.toggle('isActive');
+            document.getElementById('dropdown__menu').classList.toggle('not-hidden');
+        })
 
-        select.addEventListener('change', (e) => {
-            const selected = select.querySelector('[value=' + document.getElementById('filter').value + ']')
-
-            select.querySelectorAll('option:not([value=""])').forEach((o, i) => {
-                o.style.display = 'block'
-            })
-            selected.style.display = 'none'
+        const select = document.getElementById('dropdown__menu_hidden')
+        select.addEventListener('click', (e) => {
             medias.sort((a, b) => {
-                switch (e.target.value) {
-                    case 'likes':
+                switch (e.target.innerText) {
+                    case 'Popularité':
                         if (a.likes > b.likes) {
                             return -1
                         } else {
                             return 1
                         }
                         break;
-                    case 'date':
+                    case 'Date':
                         if (a.date > b.date) {
                             return 1
                         } else {
                             return -1
                         }
                         break;
-                    case 'title':
+                    case 'Titre':
                         if (a.title > b.title) {
                             return 1
                         } else {
@@ -89,7 +93,17 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             mediaSection.innerHTML = '';
             displayMedias(medias);
+
         })
+
+        const selectAccessibility = document.getElementsByClassName('dropdown__options')
+        for (let i = 0; i < selectAccessibility.length; i++) {
+            selectAccessibility[i].addEventListener('keydown', (e) => {
+                if (e.key === "Enter") {
+                    selectAccessibility[i].click();
+                }
+            });
+        }
 
         /* Initialisation des variables pour créer le DOM des médias*/
         const section = document.createElement("section");
