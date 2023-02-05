@@ -1,3 +1,5 @@
+/* ---- Ce fichier comporte les éléments nécessaire à l'affichage des éléments sur la page d'accueil ainsi que le header de la page d'un photographe. ---- */
+
 document.addEventListener("DOMContentLoaded", function () {
 
     /**

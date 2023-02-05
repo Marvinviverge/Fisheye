@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* ---- Ce fichier comporte les éléments nécessaire à l'affichage des éléments sur la page d'un photographe après le header, soit le filtre/dropdown et le tri, l'affichage des médias en faisant appels aux classes et à la modale de carroussel ---- */
 
+document.addEventListener("DOMContentLoaded", function () {
 
     /**
      * Création d'une fonction principale "main" qui va appeler les autres fonctions.

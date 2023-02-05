@@ -1,8 +1,15 @@
 @import url("photographer.css");
 
+/* ---- Dans ce fichier vous trouverez le CSS relatifs aux éléments suivants: ----
+    1- Style Général
+    2- Div photographe page d'accueil
+    3- Système de Like
+    4- Boutons du site 
+*/
+
 /*-----------------------------------------------------------*/
 
-/* Style générale du site. */
+/* 1- Style générale du site. */
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0px;
@@ -62,7 +69,7 @@ article .price {
 
 /*-----------------------------------------------------------*/
 
-/* Style apporté à la div des photographes sur la page d'accueil */
+/* 2- Style apporté à la div des photographes sur la page d'accueil */
 .photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -91,7 +98,7 @@ article .price {
 
 /*-----------------------------------------------------------*/
 
-/* Style apporté au système de like du site. */
+/* 3- Style apporté au système de like du site. */
 .likes {
     display: flex;
     align-items: center;
@@ -114,7 +121,7 @@ article .price {
 
 /*-----------------------------------------------------------*/
 
-/* Style apporté aux différents boutons du site */
+/* 4- Style apporté aux différents boutons du site */
 .contact_button,
 .send_button,
 #filter {

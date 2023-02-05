@@ -1,6 +1,16 @@
+/* ---- Dans ce fichier vous trouverez le CSS relatifs aux éléments suivants: ----
+    1- Modale de contact
+    2- Page photographe
+    3- Filtre/Dropdown
+    4- Médias
+    5- Bandeau
+    6- Modale carroussel
+    7- Boutons modale carroussel
+*/
+
 /*-----------------------------------------------------------*/
 
-/* Style apporté à la modale de contact */
+/* 1- Style apporté à la modale de contact */
 #contact_modal {
     display: none;
 }
@@ -68,7 +78,7 @@ form input {
 
 /*-----------------------------------------------------------*/
 
-/* Style général apporté à la page d'un photographe */
+/* 2- Style général apporté à la page d'un photographe */
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
@@ -116,7 +126,7 @@ form input {
 
 /*-----------------------------------------------------------*/
 
-/* Style apporté à toute la section portant sur le filtre et son dropdown.*/
+/* 3- Style apporté à toute la section portant sur le filtre et son dropdown.*/
 #filter_section {
     position: absolute;
     display: flex;
@@ -197,7 +207,7 @@ select {
 
 /*-----------------------------------------------------------*/
 
-/* Style apporté aux médias sur la page d'un photographe*/
+/* 4- Style apporté aux médias sur la page d'un photographe*/
 .mediaCard {
     display: flex;
     flex-wrap: wrap;
@@ -227,7 +237,7 @@ select {
 
 /*-----------------------------------------------------------*/
 
-/* Style apporté au bandeau récapitulatif d'un photographe. */
+/* 5- Style apporté au bandeau récapitulatif d'un photographe. */
 .dayPrice {
     display: flex;
     justify-content: space-between;
@@ -251,7 +261,7 @@ select {
 
 /*-----------------------------------------------------------*/
 
-/* Style apporté à la modale du carroussel. */
+/* 6- Style apporté à la modale du carroussel. */
 .modal_childrens {
     width: 50%;
     height: 75%;
@@ -288,7 +298,7 @@ select {
 
 /*-----------------------------------------------------------*/
 
-/* Style apporté à la modale du carroussel et aux boutons previous, next et close. */
+/* 7- Style apporté à la modale du carroussel et aux boutons previous, next et close. */
 .mediaModal {
     height: 100%;
     display: none;

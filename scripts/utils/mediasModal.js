@@ -1,3 +1,4 @@
+/* ---- Ce fichier comporte les éléments nécessaire à l'initialisation de la modale de carroussel et à son ouverture. ---- */
 
 /**
  * Initialisation de la fonction initMediasModal avec en paramètre les différentes médias se trouvant sur la page d'un photographe.
