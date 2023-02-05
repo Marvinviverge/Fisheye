@@ -1,4 +1,4 @@
-/* ---- Dans ce fichier se trouve les trois class utilisées pour la création de médias selon la Factory method pattern.----*/
+/* ---- Dans ce fichier se trouve les trois classes utilisées pour la création de médias selon la Factory method pattern.----*/
 
 /**
     * La classe Medias représente la structure de base pour tous les types de médias.
@@ -123,7 +123,7 @@ class ImageMedia extends Medias {
         article.insertAdjacentHTML(
             "beforeend",
             `
-                <img src="${this.image}" class="mediaPicture" alt=""/>
+                <img src="${this.image}" class="mediaPicture" alt="${this.title}" tabindex="0"/>
                 <p>${this.title}</p> 
             `
         )
@@ -195,7 +195,7 @@ class VideoMedia extends Medias {
         article.insertAdjacentHTML(
             "beforeend",
             `
-            <video width="350" height="300" class="video" controls auto>
+            <video width="350" height="300" class="video" alt="${this.title}" tabindex="0" controls auto>
             <source src="${this.video}" type=video/mp4>
             </video>
             <p>${this.title}</p> 
