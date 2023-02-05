@@ -60,12 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div id="select__container-icon">
                     <img src="/assets/icons/dropdown.png" alt="icône flèche permettant de déplier le filtre dropdown" tabindex="0"/>
                 </div>
-                <button id="filter" type="button" role="listbox" aria-expended="false" aria-level="button to open select menu" tabindex="0">Veuillez selectionner</button>
+                <button id="filter" type="button" role="button" aria-haspopup="listbox" tabindex="0" aria-expanded="false">Veuillez selectionner</button>
                 <div id="dropdown__menu">
                 <ul id="dropdown__menu_hidden">
-                    <li class="dropdown__options" tabindex="0">Popularité</li>
-                    <li class="dropdown__options" tabindex="0">Date</li>
-                    <li class="dropdown__options" tabindex="0">Titre</li>
+                    <li class="dropdown__options" tabindex="0" role="listbox" activedescendant="Popularité">Popularité</li>
+                    <li class="dropdown__options" tabindex="0" role="listbox" activedescendant="Date">Date</li>
+                    <li class="dropdown__options" tabindex="0" role="listbox" activedescendant="Titre">Titre</li>
                 </ul>
                 </div>
             </div>
@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const arrow = document.getElementById('select__container-icon');
             arrow.classList.toggle('isActive');
             document.getElementById('dropdown__menu').classList.toggle('not-hidden');
+            document.getElementById('filter').setAttribute('aria-expanded', filter.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
         })
 
         // Ajout d'un évènement au clique sur les boutons 'popularité', 'date' et 'titre' de tri des médias par la fonction sort().
@@ -110,7 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             mediaSection.innerHTML = '';
             displayMedias(medias); // Appel de la fonction displayMedias pour effectuer un nouvel affichage des médias selon le tri choisi.
-
         })
 
         // Création d'une boucle sur les trois boutons du menu de tri et ajout d'un évènement à la pression de la touche 'entrer' sur le clavier pour lancer la fonction de tri.
@@ -157,6 +157,11 @@ document.addEventListener("DOMContentLoaded", function () {
         displayMedias(medias); // Appel de la fonction displayMedias.
         initMediasModal(medias); // Appel de la fonction iniMediaModal pour créer la modale de carroussel.
 
+        // Ajout de l'évènement au clique sur le bouton contact pour display la modale de contact.
+        const buttonContact = document.querySelector('.contact_button')
+        buttonContact.addEventListener('click', () => {
+            displayModal(photographer)
+        })
     };
 
 })

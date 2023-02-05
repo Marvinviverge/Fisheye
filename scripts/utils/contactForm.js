@@ -5,14 +5,15 @@
  * @function [<displayModal>]
  * @returns {HTMLElement} - Retourne un élément HTML qui représente la modale de formulaire de contact à un photographe. 
  */
-function displayModal() {
+function displayModal(data) {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "block";
 
     const contactForm = `
     <div class="modal">
             <header>
-                <h2>Contactez-moi</h2>
+                <h2>Contactez-moi </br> ${data.name}</h2>
+                
                 <img src="assets/icons/close.svg" onclick="closeModal()" />
             </header>
             <form onsubmit="submitForm(event)">

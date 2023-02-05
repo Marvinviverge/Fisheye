@@ -52,7 +52,7 @@ function photographerFactory(data) {
                     <h2 tabindex="0">${city}, ${country}</h2>
                     <p class="tagline" tabindex="0">${tagline}</p>
                 </div>  
-                <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+                <button class="contact_button">Contactez-moi</button>
                 <img src="${picture}" alt="${name}" class="userPicture" tabindex="0">
                 <div class="dayPrice">
                 <div class="likes"><p tabindex="0" id="totalLikes">X</p><img class="heart2" src="assets/icons/Heart2.png" alt="icône coeur symbolisant le total de like du photographe" tabindex="0"/></div>
@@ -60,7 +60,6 @@ function photographerFactory(data) {
                 </div>
             `
         )
-
         return (photographerCard)
     }
 
