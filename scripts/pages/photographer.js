@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     async function main() {
         let url = new URL(window.location.href); // On cible l'url.
         let id = url.searchParams.get("id"); // On récupère l'Id contenu dans l'url.
-        const { photographers, media } = await getData(); // Varible qui attend de recevoir les données du photographe et des médias.
+        const { photographers, media } = await getData(); // Variable qui attend de recevoir les données du photographe et des médias.
         const photographer = photographers.find(photographer => photographer.id == id) // On récupère les données du photographe correspondant à l'id de l'url.
         const medias = media.filter(medias => medias.photographerId == id) // On filtre parmis les médias ceux qui contiennent l'id retenu.
 
